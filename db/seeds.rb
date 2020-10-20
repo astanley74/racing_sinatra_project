@@ -1,0 +1,1 @@
+User.create(username: 'Rick Hendrick', password_digest: '1234', team_name: "Hendrick Motorsporots", manufacturer: 'Chevorlet')
