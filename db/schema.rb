@@ -11,13 +11,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20201020171329) do
+ActiveRecord::Schema.define(version: 20201021030620) do
 
   create_table "racecars", force: :cascade do |t|
-    t.string "car_name"
-    t.string "driver"
-    t.string "number"
-    t.string "driver_bio"
+    t.string  "car_name"
+    t.string  "driver"
+    t.string  "number"
+    t.string  "driver_bio"
+    t.integer "user_id"
   end
 
   create_table "users", force: :cascade do |t|
