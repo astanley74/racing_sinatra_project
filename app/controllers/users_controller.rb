@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
     get '/users' do
-        @users = User.all
+        @user = current_user.racecars
         erb :'users/show'
     end
 
@@ -27,7 +27,6 @@ class UsersController < ApplicationController
             @user = User.new(:username => params[:username], :password => params[:password], :team_name => params[:team_name], :manufacturer => params[:manufacturer])
             @user.save
             session[:user_id] = @user.id
-            binding.pry
             redirect '/users'
         end
     end

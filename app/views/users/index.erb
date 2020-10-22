@@ -1,0 +1,6 @@
+<%# All users and should be listed here with links to their racecars %>
+<h1>All Users</h1>
+
+<% @users.each do |user| %>
+  <p><%= user.team_name %></p>
+<%end%>

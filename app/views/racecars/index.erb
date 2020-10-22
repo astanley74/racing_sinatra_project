@@ -1,0 +1,10 @@
+<p>>Welcome, <%= current_user.username %>, here are your competitors</p>
+<h2>Racecars</h2>
+<% @racecars.each do |racecar| %>
+    <div>
+        <%= racecar.car_name %>
+        <%= racecar.driver %>
+        <%= racecar.number %>
+        <%= racecar.driver_bio %>
+    </div>
+<% end %>

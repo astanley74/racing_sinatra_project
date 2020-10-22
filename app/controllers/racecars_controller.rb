@@ -6,6 +6,12 @@ class RacecarsController < ApplicationController
         #else
             #render users racecars
         #end
+        if logged_in?
+            @racecars = Racecar.all
+            erb :'racecars/index'
+        else
+            redirect '/login'
+        end
     end
 
     get '/racecars/new' do
