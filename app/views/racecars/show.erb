@@ -1,8 +1,18 @@
+<%# Add form or button that allows user to return to homepage and view all of their racecars %>
 <h2>Here is your racecar!</h2>
-<h3></h3>
-<%= @racecar.car_name %><br>
+<h3><%= @racecar.car_name %><br></h3>
+<br>
 <p>
-    <%= @racecar.driver %><br>
-    <%= @racecar.number %><br>
-    <%= @racecar.driver_bio %><br>
+    Driver: <%= @racecar.driver %><br>
+    Number: <%= @racecar.number %><br>
+    Driver Bio: <%= @racecar.driver_bio %><br>
 </p>
+<form method="get" action="/racecars/<%=@racecar.id%>/edit">
+    <input type="submit" value="Edit Racecar">
+</form>
+
+<br>
+
+<form method="get" action="/users">
+    <input type="submit" value="Back to Your Raceteam">
+</form>

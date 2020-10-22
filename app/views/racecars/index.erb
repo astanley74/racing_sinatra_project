@@ -1,10 +1,17 @@
+<%# Allow user to see all of their competitors here %>
 <p>>Welcome, <%= current_user.username %>, here are your competitors</p>
 <h2>Racecars</h2>
 <% @racecars.each do |racecar| %>
     <div>
-        <%= racecar.car_name %>
-        <%= racecar.driver %>
-        <%= racecar.number %>
-        <%= racecar.driver_bio %>
+    
+        <a href="racecars/<%= racecar.id%>"> <h3><%= racecar.number %>. <%= racecar.driver %></a></h3>
     </div>
 <% end %>
+<br>
+<form method="get" action="/users">
+    <input type="submit" value="Back to Your Raceteam">
+</form>
+<br>
+<form method="get" action="/logout">
+    <input type="submit" value="Logout">
+</form>

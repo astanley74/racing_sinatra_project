@@ -62,11 +62,7 @@ class UsersController < ApplicationController
         #else
             #redirect to the home page
         #end
-        if logged_in?
             session.clear
-            redirect '/signup'
-        else
             redirect '/'
-        end
     end
 end

@@ -70,6 +70,40 @@ class RacecarsController < ApplicationController
         end
     end
 
+    get '/racecars/:id/edit' do
+        #if the user is logged in
+            #find the racecar
+            #check if racecar is found and racecar's user is the current user
+                #render view to edit racecar
+            #if not
+                #redirect and give flash message
+            #end
+        #else
+            #redirect to login
+        #end
+        if logged_in?
+            @racecar = Racecar.find_by_id(params[:id])
+                if @racecar.user_id == current_user.id
+                    erb :'racecars/edit'
+                else
+                    redirect '/users'
+                end
+        else
+            redirect '/login'
+        end
+    end
+
+    patch '/racecars/:id' do
+        @racecar = Racecar.find_by_id(params[:id])
+        @racecar.car_name = params[:car_name]
+        @racecar.driver = params[:driver]
+        @racecar.driver_bio = params[:driver_bio]
+        if @racecar.save
+            redirect '/users'
+        end
+        redirect "/racecars/#{params[:id]}/edit"
+    end
+
 
 
 end
