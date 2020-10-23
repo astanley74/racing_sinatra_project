@@ -13,9 +13,13 @@
 
   /* --- Welcome Page Styles --- */
   body {
-    background-color: lightblue;
+    background-image: url("../images/nascar.jpg");
+    height: 100%;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
     color: #333;
-    font-family: Sans-Serif;
+    font-family: Aldrich;
     line-height: 18px;
   }
 
@@ -84,6 +88,7 @@
 }
 
 @media screen and (max-width: 600px) {
+  
   .wrapper {
     -moz-box-shadow: none;
     -webkit-box-shadow: none;
