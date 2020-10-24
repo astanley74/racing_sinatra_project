@@ -53,7 +53,7 @@ class RacecarsController < ApplicationController
                 if @racecar.user_id == current_user.id
                     erb :'racecars/edit'
                 else
-                    flash[:error] = "Not your racecar to edit!"
+                    flash[:error] = "You can only delete racecars that you own!"
                     redirect '/users'
                 end
         else
@@ -67,9 +67,8 @@ class RacecarsController < ApplicationController
         @racecar.car_name = params[:car_name]
         @racecar.driver = params[:driver]
         @racecar.driver_bio = params[:driver_bio]
-        binding.pry
         if @racecar.save
-            redirect '/users'
+            redirect "/racecars/#{@racecar.id}"
         end
         redirect "/racecars/#{params[:id]}/edit"
     end
