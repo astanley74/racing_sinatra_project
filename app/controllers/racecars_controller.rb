@@ -5,7 +5,7 @@ class RacecarsController < ApplicationController
             @racecars = Racecar.all
             erb :'racecars/index'
         else
-            flash[:notice] = "Please Log In to Continue"
+            flash[:error] = "Please Log In to Continue"
             redirect '/login'
         end
     end
@@ -14,7 +14,7 @@ class RacecarsController < ApplicationController
         if logged_in?
             erb :'racecars/new'
         else
-            flash[:notice] = "Please Log In to Continue"
+            flash[:error] = "Please Log In to Continue"
             redirect '/login'
         end
     end
@@ -32,7 +32,7 @@ class RacecarsController < ApplicationController
                 end
             end
         else
-            flash[:notice] = "Please Log In to Continue"
+            flash[:error] = "Please Log In to Continue"
             redirect '/login'
         end
     end
@@ -42,7 +42,7 @@ class RacecarsController < ApplicationController
             @racecar = Racecar.find_by_id(params[:id])
             erb :'racecars/show'
         else
-            flash[:notice] = "Please Log In to Continue"
+            flash[:error] = "Please Log In to Continue"
             redirect '/login'
         end
     end
@@ -57,7 +57,7 @@ class RacecarsController < ApplicationController
                     redirect '/users'
                 end
         else
-            flash[:notice] = "Please Log In to Continue"
+            flash[:error] = "Please Log In to Continue"
             redirect '/login'
         end
     end
@@ -67,6 +67,7 @@ class RacecarsController < ApplicationController
         @racecar.car_name = params[:car_name]
         @racecar.driver = params[:driver]
         @racecar.driver_bio = params[:driver_bio]
+        binding.pry
         if @racecar.save
             redirect '/users'
         end
@@ -83,7 +84,7 @@ class RacecarsController < ApplicationController
             end
             redirect '/users'
         else
-            flash[:notice] = "Please Log In to Continue"
+            flash[:error] = "Please Log In to Continue"
             redirect '/login'
         end
     end
