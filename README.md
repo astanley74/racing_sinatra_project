@@ -16,7 +16,7 @@ This app allows you to create an account and have racecars. You can add a raceca
     $ git clone git@github.com:astanley74/racing_sinatra_project.git
     $ cd racing_sinatra_project
     $ bundle install
-    $ rake db:create && rake db:migrate
+    $ rake db:migrate
 
 ## Run the server
 
