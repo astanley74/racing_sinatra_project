@@ -53,7 +53,7 @@ class RacecarsController < ApplicationController
                 if @racecar.user_id == current_user.id
                     erb :'racecars/edit'
                 else
-                    flash[:error] = "You can only delete racecars that you own!"
+                    flash[:error] = "You can only edit racecars that you own!"
                     redirect '/users'
                 end
         else
