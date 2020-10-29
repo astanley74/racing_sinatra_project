@@ -10,11 +10,19 @@
     <link rel="stylesheet" href="/stylesheets/main.css" />
   </head>
   <body>
-
+    <div class="topnav">
+      <a href="/users">Home</a>
+      <a href="/racecars">Competitors</a>
+      <a href="/racecars/new">New Racecar</a>
+      <a href="/logout">Logout</a>
+    </div>
 
     <div class="wrapper">
     
-      <%= flash[:error] %><br>
+      <% if flash[:error] %>
+        <div class="error"><%= flash[:error] %></div>
+      <% end %>
+
 
         <%= yield %><br>
 

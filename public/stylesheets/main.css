@@ -18,13 +18,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    color: #333;
-    font-family: Aldrich;
+    color: white;
+    font-family: Impact, Charcoal, sans-serif;
     line-height: 18px;
   }
 
   .wrapper {
-    background: #fff;
+    background: grey;
     -moz-box-shadow: 0 0 10px rgba(0,0,0,.3);
     -webkit-box-shadow: 0 0 10px rgba(0,0,0,.3);
     box-shadow: 0 0 10px rgba(0,0,0,.3);
@@ -34,17 +34,94 @@
     width: 85%;
   }
 
+  .error {
+    color: #ffffff;
+    text-align: center;
+    font-size: 17px;
+    margin-bottom: 20px;
+    animation-name: flash;
+    animation-duration: 0.7s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-direction: alternate;
+    animation-play-state: running;
+  }
+
+  @keyframes flash {
+    from {color: red;}
+    to {color: black;}
+  }
+
+  .topnav {
+    overflow: hidden;
+    background-color: grey;
+  }
+  
+  .topnav a {
+    float: left;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+  
+  .topnav a:hover {
+    background-color: red;
+    color: white;
+  }
+
+  .topnav a.active {
+    background-color: red;
+    color: white;
+  }
+
+  input[type=submit] {
+    background-color: black;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    font-family: Impact, Charcoal, sans-serif;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  button[type=submit] {
+    background-color: red;
+    border: none;
+    border-radius: 8px;
+    color: white;
+    padding: 10px 24px;
+    font-family: Impact, Charcoal, sans-serif;
+    text-decoration: none;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+
+  input[type=text]:focus, input[type=password]:focus {
+    border: 2px solid red;
+    border-radius: 4px;
+  }
+
+  input[type=text], input[type=password] {
+    width: 200px;
+  }
+
+
   h1 {
     font-size: 36px;
     line-height: 54px;
+    border-bottom: 2px solid #ccc;
+    margin-bottom: 20px;
   }
 
   h2 {
-    border-bottom: 2px solid #ccc;
     text-align: center;
     font-size: 24px;
     line-height: 36px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   h3 {
@@ -57,6 +134,13 @@
     text-decoration: underline;
     text-align: right;
     line-height: 36px;
+  }
+
+  h5 {
+      font-size: 18px;
+      line-height: 36px;
+      border-bottom: 2px solid #ccc;
+      margin-bottom: 16px;
   }
   
   p {

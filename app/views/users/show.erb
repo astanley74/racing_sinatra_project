@@ -1,22 +1,11 @@
 <%# user homepage, should be able to view, add all of their racecars and add/delete racecars %>
-<h2><%= current_user.team_name %></h2>
-
-<h3>Hello <%= current_user.username %>, here is your raceteam:</h3>
-
-<h4><form method="get" action="/racecars">
-    <input type="submit" value="View Competitors">
-</form></h4>
+<h1><%= current_user.team_name %></h1>
+<h2>Here is your Raceteam</h2>
 
 <% @user.each do |racecar| %>
   <a href="racecars/<%= racecar.id%>"> <h3> <%= racecar.car_name %> </a></h3>
 <%end%>
-<br>
-<form method="get" action="/racecars/new">
+
+<h4><form method="get" action="/racecars/new">
     <input type="submit" value="Create New Racecar">
-</form>
-
-<br>
-
-<form method="get" action="/logout">
-    <input type="submit" value="Logout">
-</form>
+</form></h4>

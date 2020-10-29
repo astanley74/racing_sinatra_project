@@ -2,11 +2,11 @@ class RacecarsController < ApplicationController
 
     get '/racecars' do
         if logged_in?
-            @racecars = Racecar.all
+            @racecars = Racecar.all.order(:number)
             erb :'racecars/index'
         else
-            flash[:error] = "Please Log In to Continue"
-            redirect '/login'
+            flash[:error] = "Please Log In or Sign Up to Continue"
+            redirect '/'
         end
     end
 
@@ -14,8 +14,8 @@ class RacecarsController < ApplicationController
         if logged_in?
             erb :'racecars/new'
         else
-            flash[:error] = "Please Log In to Continue"
-            redirect '/login'
+            flash[:error] = "Please Log In or Sign Up to Continue"
+            redirect '/'
         end
     end
 
@@ -28,12 +28,13 @@ class RacecarsController < ApplicationController
                 if @racecar.save
                     redirect "/racecars/#{@racecar.id}"
                 else
+                    flash[:error] = "Your Racecar must be Unique!"
                     redirect to '/racecars/new'
                 end
             end
         else
-            flash[:error] = "Please Log In to Continue"
-            redirect '/login'
+            flash[:error] = "Please Log In or Sign Up to Continue"
+            redirect '/'
         end
     end
 
@@ -42,8 +43,8 @@ class RacecarsController < ApplicationController
             @racecar = Racecar.find_by_id(params[:id])
             erb :'racecars/show'
         else
-            flash[:error] = "Please Log In to Continue"
-            redirect '/login'
+            flash[:error] = "Please Log In or Sign Up to Continue"
+            redirect '/'
         end
     end
 
@@ -57,8 +58,8 @@ class RacecarsController < ApplicationController
                     redirect '/users'
                 end
         else
-            flash[:error] = "Please Log In to Continue"
-            redirect '/login'
+            flash[:error] = "Please Log In or Sign Up to Continue"
+            redirect '/'
         end
     end
 
@@ -83,8 +84,8 @@ class RacecarsController < ApplicationController
             end
             redirect '/users'
         else
-            flash[:error] = "Please Log In to Continue"
-            redirect '/login'
+            flash[:error] = "Please Log In or Sign Up to Continue"
+            redirect '/'
         end
     end
 end
