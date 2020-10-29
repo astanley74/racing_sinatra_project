@@ -10,6 +10,7 @@
     <strong>Driver Bio:</strong> <%= @racecar.driver_bio %><br>
 </h5>
 
+<% if @racecar.user_id == current_user.id %>
 <form method="get" action="/racecars/<%=@racecar.id%>/edit">
     <input type="submit" class="button" value="Edit Racecar">
 </form>
@@ -20,3 +21,4 @@
     <input id="hidden" type="hidden" name="_method" value="DELETE">
     <button type="submit">Delete Racecar</button>
 </form>
+<% end %>
