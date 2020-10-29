@@ -65,11 +65,16 @@ class RacecarsController < ApplicationController
 
     patch '/racecars/:id' do
         @racecar = Racecar.find_by_id(params[:id])
-        @racecar.car_name = params[:car_name]
-        @racecar.driver = params[:driver]
-        @racecar.driver_bio = params[:driver_bio]
-        if @racecar.save
-            redirect "/racecars/#{@racecar.id}"
+        if @racecar && @racecar.user == current_user
+            @racecar.car_name = params[:car_name]
+            @racecar.driver = params[:driver]
+            @racecar.driver_bio = params[:driver_bio]
+            if @racecar.save
+                redirect "/racecars/#{@racecar.id}"
+            end
+        else
+            flash[:error] = "You can only edit racecars that you own!"
+            redirect '/users'
         end
         redirect "/racecars/#{params[:id]}/edit"
     end
