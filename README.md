@@ -22,6 +22,10 @@ This app allows you to create an account and have racecars. You can add a raceca
 
     $ shotgun
 
+## Demo
+[Application Walkthrough](https://www.youtube.com/watch?v=8OtsZrZ3ZPE&t=14s)
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/<astanley74>/racing_sinatra_project. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/<astanley74>/racing_sinatra_project/blob/master/CODE_OF_CONDUCT.md).
