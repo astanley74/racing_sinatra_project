@@ -23,7 +23,7 @@ This app allows you to create an account and have racecars. You can add a raceca
     $ shotgun
 
 ## Demo
-[Application Walkthrough](https://www.youtube.com/watch?v=8OtsZrZ3ZPE&t=14s)
+[Application Walkthrough](https://www.youtube.com/watch?v=7qb7GvwGI9U&t=5s)
 
 
 ## Contributing
